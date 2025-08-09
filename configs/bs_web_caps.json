@@ -1,0 +1,9 @@
+{
+  "browser": "chromium",
+  "device": "Google Pixel 7",
+  "osVersion": "13.0",
+  "projectName": "${BS_PROJECT}",
+  "buildName": "${BS_BUILD}",
+  "sessionName": "Mobile Web Login",
+  "browserstack.local": false
+}

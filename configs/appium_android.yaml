@@ -1,0 +1,15 @@
+platformName: "Android"
+automationName: "UiAutomator2"
+deviceName: "Google Pixel 7"
+app: "${APP_ANDROID}"
+newCommandTimeout: 120
+appWaitActivity: "*"
+bstack: true
+bstack_caps:
+  "bstack:options":
+    projectName: "${BS_PROJECT}"
+    buildName: "${BS_BUILD}"
+    sessionName: "Android Login"
+    appiumVersion: "2.0"
+    networkLogs: true
+    debug: true

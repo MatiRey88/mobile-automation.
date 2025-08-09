@@ -1,0 +1,34 @@
+name: mobile-ci
+on: [push, pull_request]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      BS_USERNAME: ${{ secrets.BS_USERNAME }}
+      BS_ACCESS_KEY: ${{ secrets.BS_ACCESS_KEY }}
+      BS_PROJECT: MobileSuite
+      BS_BUILD: ${{ github.sha }}
+      BASE_URL: https://www.networksolutions.com
+      APP_ANDROID: bs://app-android
+      BROWSERSTACK: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps
+      - name: Mobile Web smoke (Playwright Python on BS)
+        run: pytest web/tests/test_web_login_smoke.py
+      - name: Native Android smoke (RF)
+        run: robot -i smoke tests/mobile_native/smoke
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            output.xml
+            log.html
+            report.html

@@ -1,0 +1,14 @@
+platformName: "iOS"
+automationName: "XCUITest"
+deviceName: "iPhone 14"
+app: "${APP_IOS}"
+newCommandTimeout: 120
+bstack: true
+bstack_caps:
+  "bstack:options":
+    projectName: "${BS_PROJECT}"
+    buildName: "${BS_BUILD}"
+    sessionName: "iOS Login"
+    appiumVersion: "2.0"
+    networkLogs: true
+    debug: true

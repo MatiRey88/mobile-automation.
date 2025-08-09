@@ -1,0 +1,10 @@
+robotframework
+robotframework-appiumlibrary
+Appium-Python-Client
+allure-robotframework
+pytest
+playwright
+pytest-playwright
+python-dotenv
+PyYAML
+requests
