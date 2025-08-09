@@ -14,3 +14,4 @@
 - Mobile Web (local): pytest web/tests/test_web_login_smoke.py
 - Mobile Web (BrowserStack): BROWSERSTACK=1 pytest web/tests/test_web_login_smoke.py
 - Native Android (BrowserStack): robot -i smoke tests/mobile_native/smoke
+## ss
