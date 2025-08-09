@@ -1,4 +1,4 @@
-name: mobile-ci
+name: mobile-ci.yml
 on: [push, pull_request]
 
 jobs:
